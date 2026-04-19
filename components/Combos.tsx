@@ -29,15 +29,17 @@ export default function Combos() {
       <div className="combos-grid">
         {/* FEATURED */}
         <div className="combo-card featured">
-          <Image
+          {/* Plain img — below fold so doesn't need Next.js Image optimization */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             className="featured-bg-img"
             src={`${BASE}/thighstack.png`}
             alt=""
             aria-hidden={true}
-            fill
-            sizes="(max-width: 900px) 50vw, 33vw"
-            style={{ objectFit: 'cover', objectPosition: 'center 75%' }}
+            width={960}
+            height={957}
             loading="lazy"
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 75%', zIndex: 0 }}
           />
           <span className="combo-num">1</span>
           <span className="combo-tag">⭐ Most Popular</span>
