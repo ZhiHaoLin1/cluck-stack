@@ -1417,12 +1417,119 @@
   }
 
   /* Responsive helper */
+  /* =============================================
+     TABLET (max 900px)
+  ============================================= */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; }
+    .hero { grid-template-columns: 1fr; min-height: 60vh; }
     .hero-right { display: none; }
-    .combos-grid { grid-template-columns: 1fr 1fr; }
+    .hero-left { padding: 48px 32px; }
+
+    .combos-grid { grid-template-columns: 1fr 1fr; padding: 0 24px; }
+    .combo-card.featured { grid-row: span 1; padding-top: 60%; }
+
     .menu-grid { grid-template-columns: 1fr 1fr; }
+
     .lto-section { grid-template-columns: 1fr; }
-    .visit-section { grid-template-columns: 1fr; }
-    .combos-header, .menu-section, .upsell-strip, .lto-section, .visit-section, footer { padding-left: 24px; padding-right: 24px; }
+    .lto-right { min-height: 300px; }
+
+    .visit-section { grid-template-columns: 1fr; gap: 40px; }
+    .visit-block,
+    .visit-block:last-child,
+    .visit-block:nth-child(2) { padding: 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 32px; }
+    .visit-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .upsell-strip { flex-direction: column; gap: 24px; align-items: flex-start; }
+
+    .combos-header,
+    .menu-section,
+    .upsell-strip,
+    .lto-section,
+    .lto-left,
+    .visit-section,
+    footer { padding-left: 24px; padding-right: 24px; }
   }
+
+  /* =============================================
+     MOBILE (max 600px)
+  ============================================= */
+  @media (max-width: 600px) {
+
+    /* NAV — hide links, keep logo + button */
+    nav { padding: 0 16px; height: 52px; }
+    .nav-links { display: none; }
+    .nav-order { font-size: 13px; padding: 8px 14px; letter-spacing: 1px; }
+
+    /* HERO */
+    .hero { min-height: auto; margin-top: 52px; }
+    .hero-left { padding: 40px 20px 48px; }
+    .hero-title { font-size: clamp(56px, 16vw, 80px); }
+    .hero-sub { font-size: 14px; letter-spacing: 2px; }
+    .btn-primary { font-size: 17px; padding: 14px 28px; }
+    .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+    /* TICKER */
+    .ticker { padding: 8px 0; }
+    .ticker-item { font-size: 13px; padding: 0 20px; }
+
+    /* COMBOS */
+    .combos { padding: 48px 0; }
+    .combos-header { padding: 0 20px; margin-bottom: 24px; }
+    .combos-grid { grid-template-columns: 1fr; padding: 0 20px; gap: 3px; }
+    .combo-card { padding: 24px 20px; }
+    .combo-card.featured { padding-top: 56%; grid-row: span 1; }
+    .combo-num { font-size: 56px; }
+    .combo-name { font-size: 24px; }
+    .section-title { font-size: 36px; }
+
+    /* UPSELL */
+    .upsell-strip { padding: 32px 20px; flex-direction: column; gap: 20px; }
+    .upsell-title { font-size: clamp(28px, 8vw, 40px); }
+    .upsell-options { flex-wrap: wrap; gap: 8px; }
+    .upsell-option { min-width: calc(50% - 4px); padding: 12px 16px; }
+
+    /* MENU */
+    .menu-section { padding: 48px 20px; }
+    .menu-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 0; }
+    .menu-tab { font-size: 12px; padding: 10px 16px; white-space: nowrap; }
+    .menu-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+    .menu-item-name { font-size: 14px; }
+    .menu-item-desc { font-size: 11px; }
+    .menu-item-price { font-size: 18px; }
+    .menu-item-body { padding: 10px; }
+
+    /* LTO */
+    .lto-section { grid-template-columns: 1fr; }
+    .lto-left { padding: 40px 20px; }
+    .lto-title { font-size: clamp(44px, 12vw, 72px); }
+    .lto-right { min-height: 260px; }
+    .lto-price { font-size: 40px; }
+    .countdown { gap: 10px; }
+    .cd-num { width: 48px; height: 48px; font-size: 32px; }
+
+    /* CTA BAND */
+    .cta-band-inner,
+    [style*="padding: 48px 60px"][style*="justify-content: space-between"] {
+      flex-direction: column !important;
+      padding: 36px 20px !important;
+      align-items: flex-start !important;
+      gap: 24px !important;
+    }
+
+    /* VISIT */
+    .visit-section { padding: 48px 20px; gap: 32px; }
+    .visit-title { font-size: 24px; }
+
+    /* FOOTER */
+    footer { flex-direction: column; align-items: flex-start; gap: 20px; padding: 28px 20px; }
+    .footer-links { flex-wrap: wrap; gap: 12px 20px; }
+
+    /* CART FLOAT */
+    .order-float { left: 12px; right: 12px; bottom: 12px; padding: 12px 16px; gap: 12px; }
+    .of-total { font-size: 22px; }
+    .of-btn { font-size: 13px; padding: 10px 16px; }
+
+    /* FEATURED INFO PANEL */
+    .featured-info-panel { margin: 0 -20px; padding: 12px 20px; }
+  }
+
