@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useCart } from '@/lib/CartContext'
 
 const BASE = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
@@ -26,16 +27,16 @@ export default function Combos() {
       </div>
 
       <div className="combos-grid">
-        {/* FEATURED — uses real <img> so browser preloader can discover it */}
+        {/* FEATURED */}
         <div className="combo-card featured">
-          {/* Real img tag replaces CSS background-image for preloader discoverability */}
-          <img
+          <Image
             className="featured-bg-img"
             src={`${BASE}/thighstack.png`}
             alt=""
-            aria-hidden="true"
-            width={960}
-            height={957}
+            aria-hidden={true}
+            fill
+            sizes="(max-width: 900px) 50vw, 33vw"
+            style={{ objectFit: 'cover', objectPosition: 'center 75%' }}
             loading="lazy"
           />
           <span className="combo-num">1</span>
@@ -103,7 +104,7 @@ export default function Combos() {
           <span className="combo-num">4</span>
           <span className="combo-tag">👨‍👩‍👧 Family</span>
           <span className="combo-food-icon" style={{ fontSize: 40, display: 'block', marginBottom: 8 }}>
-            <img loading="lazy" src={`${BASE}/chickenbucket.png`} alt="Family Pack" style={{ width: 48, height: 48, objectFit: 'contain', display: 'block' }} />
+            <Image loading="lazy" src={`${BASE}/chickenbucket.png`} alt="Family Pack" width={48} height={48} style={{ objectFit: 'contain', display: 'block' }} />
           </span>
           <div className="combo-name">FAMILY PACK</div>
           <div className="combo-desc">8-piece chicken, 4 waffles, 3 sides, sauce sampler. Feeds the whole crew.</div>

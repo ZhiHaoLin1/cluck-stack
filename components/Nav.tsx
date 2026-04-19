@@ -1,5 +1,9 @@
 'use client'
 
+import Image from 'next/image'
+
+const R2 = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
+
 export default function Nav() {
   function scrollToOrder() {
     document.getElementById('combos')?.scrollIntoView({ behavior: 'smooth' })
@@ -8,7 +12,7 @@ export default function Nav() {
   return (
     <nav>
       <div className="nav-logo">
-        <img src="https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev/logo.png" alt="Cluck & Stack" width={36} height={36} style={{ height: 36, width: 'auto', display: 'block' }} />
+        <Image src={`${R2}/logo.png`} alt="Cluck & Stack" width={120} height={36} style={{ height: 36, width: 'auto' }} priority />
       </div>
       <ul className="nav-links">
         <li><a href="#combos">Combos</a></li>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { useCart } from '@/lib/CartContext'
 
 const BASE = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
@@ -107,7 +108,7 @@ export default function LTO() {
         </button>
       </div>
       <div className="lto-right">
-        <img loading="lazy" src={`${BASE}/mango.png`} alt="Spicy Mango Stack" />
+        <Image loading="lazy" src={`${BASE}/mango.png`} alt="Spicy Mango Stack" fill sizes="50vw" style={{ objectFit: 'cover' }} />
       </div>
     </section>
   )

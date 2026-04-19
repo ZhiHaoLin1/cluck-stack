@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useCart } from '@/lib/CartContext'
 
 const BASE = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
@@ -62,12 +63,14 @@ function MenuCard({ item }: { item: MenuItem }) {
 
   return (
     <div className="menu-item">
-      <div className="menu-item-img" style={{ padding: 0, overflow: 'hidden' }}>
-        <img
-          loading="lazy"
+      <div className="menu-item-img" style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
+        <Image
           src={`${BASE}/${item.img}`}
           alt={item.name}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          fill
+          sizes="(max-width: 600px) 50vw, (max-width: 900px) 25vw, 20vw"
+          style={{ objectFit: 'cover' }}
+          loading="lazy"
         />
         {item.badge && (
           <span className={item.badge.type === 'popular' ? 'menu-item-popular' : 'menu-item-new'}>
@@ -80,10 +83,7 @@ function MenuCard({ item }: { item: MenuItem }) {
         <div className="menu-item-desc">{item.desc}</div>
         <div className="menu-item-footer">
           <div className="menu-item-price">${item.price.toFixed(2)}</div>
-          <button
-            className={`item-add-btn${added ? ' added' : ''}`}
-            onClick={handle}
-          >
+          <button className={`item-add-btn${added ? ' added' : ''}`} onClick={handle}>
             {added ? '✓' : '+'}
           </button>
         </div>
