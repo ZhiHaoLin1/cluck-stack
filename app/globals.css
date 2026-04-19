@@ -1478,10 +1478,37 @@
     .nav-order { font-size: 13px; padding: 8px 14px; letter-spacing: 1px; }
 
     /* HERO */
-    .hero { min-height: 0 !important; height: auto; margin-top: 52px; }
-    .hero-left { padding: 28px 20px; justify-content: flex-start; }
-    .hero-title { font-size: clamp(32px, 10vw, 56px); }
-    .hero-sub { font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; }
+    .hero {
+      display: block;
+      position: relative;
+      min-height: 0 !important;
+      height: auto;
+      margin-top: 52px;
+    }
+    .hero-left {
+      padding: 24px 44% 24px 20px;
+      justify-content: flex-start;
+      min-height: 0;
+    }
+    .hero-right {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 42%;
+      background: transparent;
+      overflow: hidden;
+      min-height: 0;
+    }
+    .hero-plate { width: 100%; filter: none; }
+    .hero-glow-spill { display: none; }
+    .hero-floater { display: none; }
+    .steam { display: none; }
+    .hero-floor-shadow { display: none; }
+    .hero-stripe { display: none; }
+    .hero-title { font-size: clamp(36px, 10vw, 56px); }
+    .hero-sub { font-size: 12px; letter-spacing: 2px; margin-bottom: 16px; }
     .btn-primary { font-size: 15px; padding: 12px 22px; }
     .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 10px; }
 
