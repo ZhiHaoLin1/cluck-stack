@@ -91,7 +91,7 @@ export default function LTO() {
         </button>
       </div>
       <div className="lto-right">
-        <img src={`${BASE}/mango.png`} alt="Spicy Mango Stack" />
+        <img loading="lazy" src={`${BASE}/mango.png`} alt="Spicy Mango Stack" />
       </div>
     </section>
   )

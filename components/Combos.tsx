@@ -93,7 +93,7 @@ export default function Combos() {
           <span className="combo-num">4</span>
           <span className="combo-tag">👨‍👩‍👧 Family</span>
           <span className="combo-food-icon" style={{ fontSize: 40, display: 'block', marginBottom: 8 }}>
-            <img src={`${BASE}/chickenbucket.png`} alt="Family Pack" style={{ width: 48, height: 48, objectFit: 'contain', display: 'block' }} />
+            <img loading="lazy" src={`${BASE}/chickenbucket.png`} alt="Family Pack" style={{ width: 48, height: 48, objectFit: 'contain', display: 'block' }} />
           </span>
           <div className="combo-name">FAMILY PACK</div>
           <div className="combo-desc">8-piece chicken, 4 waffles, 3 sides, sauce sampler. Feeds the whole crew.</div>

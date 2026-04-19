@@ -7,7 +7,7 @@ export default function Footer() {
         <img
           src={`${BASE}/logo.png`}
           alt="Cluck & Stack"
-          style={{ height: 28, width: 'auto', display: 'block', opacity: 0.85 }}
+          width={28} height={28} loading="lazy" style={{ height: 28, width: 'auto', display: 'block', opacity: 0.85 }}
         />
       </div>
       <ul className="footer-links">

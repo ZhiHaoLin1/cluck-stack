@@ -64,6 +64,7 @@ function MenuCard({ item }: { item: MenuItem }) {
     <div className="menu-item">
       <div className="menu-item-img" style={{ padding: 0, overflow: 'hidden' }}>
         <img
+          loading="lazy"
           src={`${BASE}/${item.img}`}
           alt={item.name}
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
