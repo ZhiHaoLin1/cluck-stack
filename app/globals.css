@@ -1423,7 +1423,7 @@
   @media (max-width: 900px) {
     .hero {
       grid-template-columns: 1fr 1fr;
-      min-height: 0;
+      min-height: 0 !important;
       height: auto;
       align-items: stretch;
     }
@@ -1436,7 +1436,7 @@
       width: 95%;
       filter: none;
     }
-    .hero-left { padding: 28px 16px 28px 20px; }
+    .hero-left { padding: 28px 16px 28px 20px; justify-content: flex-start; }
     .hero-glow-spill { display: none; }
     .hero-floater { display: none; }
     .steam { display: none; }
@@ -1478,12 +1478,12 @@
     .nav-order { font-size: 13px; padding: 8px 14px; letter-spacing: 1px; }
 
     /* HERO */
-    .hero { min-height: auto; margin-top: 52px; }
-    .hero-left { padding: 40px 20px 48px; }
-    .hero-title { font-size: clamp(56px, 16vw, 80px); }
-    .hero-sub { font-size: 14px; letter-spacing: 2px; }
-    .btn-primary { font-size: 17px; padding: 14px 28px; }
-    .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero { min-height: 0 !important; height: auto; margin-top: 52px; }
+    .hero-left { padding: 28px 20px; justify-content: flex-start; }
+    .hero-title { font-size: clamp(32px, 10vw, 56px); }
+    .hero-sub { font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; }
+    .btn-primary { font-size: 15px; padding: 12px 22px; }
+    .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 10px; }
 
     /* TICKER */
     .ticker { padding: 8px 0; }
