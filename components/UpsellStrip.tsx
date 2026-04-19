@@ -36,7 +36,7 @@ export default function UpsellStrip() {
           >
             <span className="upsell-opt-icon">
               {side.img
-                ? <img src={side.img} alt={side.name} style={{ width: 32, height: 32, objectFit: 'contain', display: 'block', margin: '0 auto' }} />
+                ? <img loading="lazy" src={side.img} alt={side.name} style={{ width: 32, height: 32, objectFit: 'contain', display: 'block', margin: '0 auto' }} />
                 : side.icon}
             </span>
             <span className="upsell-opt-name">{side.name}</span>

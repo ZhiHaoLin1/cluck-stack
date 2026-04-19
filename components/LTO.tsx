@@ -5,25 +5,41 @@ import { useCart } from '@/lib/CartContext'
 
 const BASE = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
 
+function getTimeLeft() {
+  const now = new Date()
+  const end = new Date()
+  end.setHours(22, 0, 0, 0)
+  if (now > end) end.setDate(end.getDate() + 1)
+  const diff = Math.max(0, Math.floor((end.getTime() - now.getTime()) / 1000))
+  return {
+    h: String(Math.floor(diff / 3600)).padStart(2, '0'),
+    m: String(Math.floor((diff % 3600) / 60)).padStart(2, '0'),
+    s: String(diff % 60).padStart(2, '0'),
+  }
+}
+
 function useCountdown() {
   const [time, setTime] = useState({ h: '00', m: '00', s: '00' })
 
   useEffect(() => {
+    // Set initial value immediately on mount (avoids hydration mismatch)
+    setTime(getTimeLeft())
+
+    let lastSecond = -1
+    let rafId: number
+
     function tick() {
-      const now = new Date()
-      const end = new Date()
-      end.setHours(22, 0, 0, 0)
-      if (now > end) end.setDate(end.getDate() + 1)
-      const diff = Math.floor((end.getTime() - now.getTime()) / 1000)
-      setTime({
-        h: String(Math.floor(diff / 3600)).padStart(2, '0'),
-        m: String(Math.floor((diff % 3600) / 60)).padStart(2, '0'),
-        s: String(diff % 60).padStart(2, '0'),
-      })
+      const now = Math.floor(Date.now() / 1000)
+      // Only update state when the second actually changes — avoids forced reflow every frame
+      if (now !== lastSecond) {
+        lastSecond = now
+        setTime(getTimeLeft())
+      }
+      rafId = requestAnimationFrame(tick)
     }
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
+
+    rafId = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafId)
   }, [])
 
   return time

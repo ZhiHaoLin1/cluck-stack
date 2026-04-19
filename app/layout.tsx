@@ -29,9 +29,22 @@ export const metadata: Metadata = {
   description: 'Crispy. Stacked. No Apologies. Order chicken & waffles online.',
 }
 
+const R2 = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${bebasNeue.variable} ${barlowCondensed.variable} ${barlow.variable}`}>
+      <head>
+        {/* Preconnect to R2 CDN — saves ~300ms on first image request */}
+        <link rel="preconnect" href={R2} crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href={R2} />
+        {/* Preload the LCP hero image */}
+        <link
+          rel="preload"
+          as="image"
+          href={`${R2}/clucknwaffle.png?v=2`}
+        />
+      </head>
       <body>
         <CartProvider>{children}</CartProvider>
       </body>
