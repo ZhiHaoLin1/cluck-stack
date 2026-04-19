@@ -1421,9 +1421,14 @@
      TABLET (max 900px)
   ============================================= */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: 60vh; }
-    .hero-right { display: none; }
-    .hero-left { padding: 48px 32px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right {
+      display: flex;
+      min-height: 320px;
+      background: var(--black);
+    }
+    .hero-plate { width: 70%; }
+    .hero-left { padding: 48px 32px 32px; }
 
     .combos-grid { grid-template-columns: 1fr 1fr; padding: 0 24px; }
     .combo-card.featured { grid-row: span 1; padding-top: 60%; }
