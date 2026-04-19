@@ -36,8 +36,7 @@ export default function Combos() {
             aria-hidden="true"
             width={960}
             height={957}
-            // @ts-expect-error fetchpriority not yet in React types
-            fetchpriority="high"
+            loading="lazy"
           />
           <span className="combo-num">1</span>
           <span className="combo-tag">⭐ Most Popular</span>
