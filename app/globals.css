@@ -1421,14 +1421,25 @@
      TABLET (max 900px)
   ============================================= */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero {
+      grid-template-columns: 1fr 1fr;
+      min-height: auto;
+      align-items: center;
+    }
     .hero-right {
       display: flex;
-      min-height: 320px;
+      min-height: 260px;
       background: var(--black);
     }
-    .hero-plate { width: 70%; }
-    .hero-left { padding: 48px 32px 32px; }
+    .hero-plate {
+      width: 95%;
+      filter: none;
+    }
+    .hero-left { padding: 32px 16px 32px 20px; }
+    .hero-glow-spill { display: none; }
+    .hero-floater { display: none; }
+    .steam { display: none; }
+    .hero-floor-shadow { display: none; }
 
     .combos-grid { grid-template-columns: 1fr 1fr; padding: 0 24px; }
     .combo-card.featured { grid-row: span 1; padding-top: 60%; }
