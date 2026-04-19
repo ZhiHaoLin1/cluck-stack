@@ -108,7 +108,7 @@ export default function LTO() {
         </button>
       </div>
       <div className="lto-right">
-        <Image loading="lazy" src={`${BASE}/mango.png`} alt="Spicy Mango Stack" fill sizes="50vw" style={{ objectFit: 'cover' }} />
+        <img loading="lazy" src={`${BASE}/mango.png`} alt="Spicy Mango Stack" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
     </section>
   )

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 const R2 = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
 
 export default function Hero() {
@@ -28,15 +26,15 @@ export default function Hero() {
         <div className="hero-floater crumb1"></div>
         <div className="hero-floater crumb2"></div>
         <div className="hero-floater crumb3"></div>
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           className="hero-plate"
           src={`${R2}/clucknwaffle.png?v=2`}
           alt="Chicken and Waffles"
           width={1024}
           height={1024}
-          priority
-          sizes="50vw"
-          unoptimized={false}
+          // @ts-expect-error fetchpriority not yet in React types
+          fetchpriority="high"
         />
         <div className="steam">
           <div className="steam-wisp"></div>
