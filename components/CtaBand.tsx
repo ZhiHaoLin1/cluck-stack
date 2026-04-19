@@ -12,18 +12,18 @@ export default function CtaBand() {
     }}>
       <div>
         <div style={{
-          fontFamily: 'var(--font-barlow-condensed), sans-serif',
+          fontFamily: "'Barlow Condensed', sans-serif",
           fontWeight: 700,
           fontSize: 12,
           letterSpacing: 4,
-          textTransform: 'uppercase' as const,
+          textTransform: 'uppercase',
           color: 'rgba(0,0,0,0.5)',
           marginBottom: 6,
         }}>
           Ready to eat?
         </div>
         <div style={{
-          fontFamily: 'var(--font-bebas), sans-serif',
+          fontFamily: "'Bebas Neue', sans-serif",
           fontSize: 'clamp(36px,4vw,56px)',
           letterSpacing: 2,
           lineHeight: 1,
@@ -33,14 +33,14 @@ export default function CtaBand() {
           <span style={{ color: 'var(--red)' }}>PICK UP IN 10.</span>
         </div>
       </div>
-      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <a href="#combos" className="btn-primary" style={{ fontSize: 20, padding: '18px 40px' }}>
           ORDER ONLINE →
         </a>
         <a
           href="#visit"
           style={{
-            fontFamily: 'var(--font-bebas), sans-serif',
+            fontFamily: "'Bebas Neue', sans-serif",
             fontSize: 20,
             letterSpacing: 2,
             padding: '18px 32px',
