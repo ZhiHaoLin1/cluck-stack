@@ -44,6 +44,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           as="image"
           href={`${R2}/clucknwaffle.png?v=2`}
         />
+        <link
+          rel="preload"
+          as="image"
+          href={`${R2}/thighstack.png`}
+        />
       </head>
       <body>
         <CartProvider>{children}</CartProvider>

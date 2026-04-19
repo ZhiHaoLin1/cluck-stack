@@ -26,8 +26,19 @@ export default function Combos() {
       </div>
 
       <div className="combos-grid">
-        {/* FEATURED */}
+        {/* FEATURED — uses real <img> so browser preloader can discover it */}
         <div className="combo-card featured">
+          {/* Real img tag replaces CSS background-image for preloader discoverability */}
+          <img
+            className="featured-bg-img"
+            src={`${BASE}/thighstack.png`}
+            alt=""
+            aria-hidden="true"
+            width={960}
+            height={957}
+            // @ts-expect-error fetchpriority not yet in React types
+            fetchpriority="high"
+          />
           <span className="combo-num">1</span>
           <span className="combo-tag">⭐ Most Popular</span>
           <div className="featured-info-panel">
