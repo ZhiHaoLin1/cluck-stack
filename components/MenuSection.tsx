@@ -63,9 +63,11 @@ function MenuCard({ item }: { item: MenuItem }) {
   return (
     <div className="menu-item">
       <div className="menu-item-img" style={{ padding: 0, overflow: 'hidden' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`${BASE}/${item.img}`}
           alt={item.name}
+          loading="lazy"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
         {item.badge && (
@@ -79,10 +81,7 @@ function MenuCard({ item }: { item: MenuItem }) {
         <div className="menu-item-desc">{item.desc}</div>
         <div className="menu-item-footer">
           <div className="menu-item-price">${item.price.toFixed(2)}</div>
-          <button
-            className={`item-add-btn${added ? ' added' : ''}`}
-            onClick={handle}
-          >
+          <button className={`item-add-btn${added ? ' added' : ''}`} onClick={handle}>
             {added ? '✓' : '+'}
           </button>
         </div>

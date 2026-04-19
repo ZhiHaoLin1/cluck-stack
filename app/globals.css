@@ -16,7 +16,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Barlow', sans-serif;
+    font-family: var(--font-barlow), sans-serif;
     background: var(--offwhite);
     color: var(--black);
     overflow-x: hidden;
@@ -37,7 +37,7 @@
   }
 
   .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 26px;
     color: var(--yellow);
     letter-spacing: 2px;
@@ -52,7 +52,7 @@
   }
 
   .nav-links a {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 2px;
@@ -67,7 +67,7 @@
   .nav-order {
     background: var(--yellow);
     color: var(--black);
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 17px;
     letter-spacing: 2px;
     padding: 10px 22px;
@@ -107,7 +107,7 @@
     gap: 8px;
     background: var(--red);
     color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 11px;
     letter-spacing: 3px;
@@ -130,7 +130,7 @@
   }
 
   .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: clamp(72px, 9vw, 130px);
     line-height: 0.92;
     color: var(--white);
@@ -142,7 +142,7 @@
   .hero-title .red { color: var(--red); }
 
   .hero-sub {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 600;
     font-size: 18px;
     letter-spacing: 3px;
@@ -161,7 +161,7 @@
   .btn-primary {
     background: var(--yellow);
     color: var(--black);
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 22px;
     letter-spacing: 3px;
     padding: 18px 44px;
@@ -189,7 +189,7 @@
   .btn-secondary {
     background: transparent;
     color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 2px;
@@ -410,7 +410,7 @@
   }
 
   .ticker-item {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 16px;
     letter-spacing: 3px;
     color: var(--black);
@@ -425,7 +425,7 @@
 
   /* SECTION HEADER */
   .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 11px;
     letter-spacing: 4px;
@@ -435,7 +435,7 @@
   }
 
   .section-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: clamp(42px, 6vw, 72px);
     letter-spacing: 2px;
     line-height: 1;
@@ -460,7 +460,7 @@
   .combos-header .section-label { color: var(--yellow); }
 
   .see-all {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 2px;
@@ -497,9 +497,7 @@
   }
 
   .combo-card.featured {
-    background-image: url('https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev/thighstack.png');
-    background-size: 95%;
-    background-position: center 50%;
+    background: var(--black);
     grid-row: span 2;
     display: flex;
     flex-direction: column;
@@ -511,25 +509,13 @@
     transition: background-size 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease;
   }
 
-  .combo-card.featured:hover {
-    background-size: 100%;
-    background-position: center 50%;
-    transform: translateY(-4px);
-    box-shadow:
-      0 0 0 1px rgba(255,215,0,0.6),
-      0 0 24px rgba(255,215,0,0.25),
-      0 16px 40px rgba(0,0,0,0.5);
+  /* featured card bg image */
+  .featured-bg-img {
+    transition: transform 0.4s ease;
   }
 
-  .combo-card.featured:hover::before {
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.0)  0%,
-      rgba(0,0,0,0.0)  25%,
-      rgba(0,0,0,0.55) 50%,
-      rgba(0,0,0,0.88) 72%,
-      rgba(0,0,0,0.96) 100%
-    );
+  .combo-card.featured:hover .featured-bg-img {
+    transform: scale(1.06);
   }
 
   .featured-info-panel .combo-includes {
@@ -599,7 +585,7 @@
   }
 
   .combo-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 80px;
     color: rgba(255,255,255,0.08);
     line-height: 1;
@@ -612,7 +598,7 @@
     display: inline-block;
     background: var(--red);
     color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 10px;
     letter-spacing: 2px;
@@ -634,7 +620,7 @@
   }
 
   .combo-name {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 32px;
     letter-spacing: 1px;
     color: var(--white);
@@ -657,7 +643,7 @@
   }
 
   .combo-price {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 36px;
     color: var(--yellow);
     letter-spacing: 1px;
@@ -666,7 +652,7 @@
   .combo-add {
     background: var(--yellow);
     color: var(--black);
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 14px;
     letter-spacing: 2px;
     padding: 10px 18px;
@@ -690,7 +676,7 @@
   }
 
   .include-tag {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 600;
     font-size: 11px;
     letter-spacing: 1px;
@@ -742,7 +728,7 @@
   }
 
   .menu-tab {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 2px;
@@ -813,7 +799,7 @@
     left: 10px;
     background: var(--red);
     color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 10px;
     letter-spacing: 2px;
@@ -827,7 +813,7 @@
     left: 10px;
     background: var(--yellow);
     color: var(--black);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 10px;
     letter-spacing: 2px;
@@ -840,7 +826,7 @@
   }
 
   .menu-item-name {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 17px;
     letter-spacing: 0.5px;
@@ -863,7 +849,7 @@
   }
 
   .menu-item-price {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 22px;
     color: var(--yellow);
     letter-spacing: 1px;
@@ -879,7 +865,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     transition: all 0.15s;
     line-height: 1;
   }
@@ -902,7 +888,7 @@
   .upsell-left {}
 
   .upsell-eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 12px;
     letter-spacing: 4px;
@@ -912,7 +898,7 @@
   }
 
   .upsell-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: clamp(36px, 4vw, 60px);
     color: var(--white);
     letter-spacing: 2px;
@@ -957,7 +943,7 @@
 
   .upsell-opt-icon { font-size: 28px; display: block; margin-bottom: 4px; }
   .upsell-opt-name {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 1px;
@@ -967,7 +953,7 @@
     margin-bottom: 2px;
   }
   .upsell-opt-price {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 16px;
     color: rgba(255,255,255,0.7);
     letter-spacing: 1px;
@@ -1026,7 +1012,7 @@
   }
 
   .lto-eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 11px;
     letter-spacing: 4px;
@@ -1054,7 +1040,7 @@
   }
 
   .lto-heat-tag {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 10px;
     letter-spacing: 2px;
@@ -1070,7 +1056,7 @@
   .lto-heat-tag.limit { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.15); }
 
   .lto-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: clamp(60px, 7vw, 100px);
     letter-spacing: 2px;
     line-height: 0.88;
@@ -1105,7 +1091,7 @@
   }
 
   .lto-price {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 52px;
     color: var(--yellow);
     letter-spacing: 2px;
@@ -1113,7 +1099,7 @@
   }
 
   .lto-price-old {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 28px;
     color: rgba(255,255,255,0.25);
     letter-spacing: 1px;
@@ -1123,7 +1109,7 @@
   .lto-price-save {
     background: var(--red);
     color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 11px;
     letter-spacing: 2px;
@@ -1164,7 +1150,7 @@
   }
 
   .cd-label {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 9px;
     letter-spacing: 2px;
@@ -1175,7 +1161,7 @@
   }
 
   .cd-sep {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 32px;
     color: var(--yellow);
     padding-bottom: 16px;
@@ -1194,7 +1180,7 @@
   }
 
   .cd-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 40px;
     background: var(--yellow);
     color: var(--black);
@@ -1207,7 +1193,7 @@
   }
 
   .cd-label {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 9px;
     letter-spacing: 2px;
@@ -1218,7 +1204,7 @@
   }
 
   .cd-sep {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 32px;
     color: var(--black);
     padding-bottom: 16px;
@@ -1246,7 +1232,7 @@
   }
 
   .of-count {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 13px;
     letter-spacing: 2px;
     color: var(--gray);
@@ -1260,7 +1246,7 @@
   }
 
   .of-total {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 28px;
     color: var(--white);
     letter-spacing: 2px;
@@ -1269,7 +1255,7 @@
   .of-btn {
     background: var(--yellow);
     color: var(--black);
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 16px;
     letter-spacing: 2px;
     padding: 12px 28px;
@@ -1308,7 +1294,7 @@
   }
 
   .visit-label {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 700;
     font-size: 11px;
     letter-spacing: 4px;
@@ -1318,7 +1304,7 @@
   }
 
   .visit-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 32px;
     color: var(--white);
     letter-spacing: 2px;
@@ -1333,7 +1319,7 @@
 
   .visit-text strong {
     color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -1369,7 +1355,7 @@
   }
 
   .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), sans-serif;
     font-size: 22px;
     color: var(--yellow);
     letter-spacing: 3px;
@@ -1382,7 +1368,7 @@
   }
 
   .footer-links a {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 2px;
@@ -1421,9 +1407,26 @@
      TABLET (max 900px)
   ============================================= */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: 60vh; }
-    .hero-right { display: none; }
-    .hero-left { padding: 48px 32px; }
+    .hero {
+      grid-template-columns: 1fr 1fr;
+      min-height: 0 !important;
+      height: auto;
+      align-items: stretch;
+    }
+    .hero-right {
+      display: flex;
+      min-height: 0;
+      background: var(--black);
+    }
+    .hero-plate {
+      width: 95%;
+      filter: none;
+    }
+    .hero-left { padding: 28px 16px 28px 20px; justify-content: flex-start; }
+    .hero-glow-spill { display: none; }
+    .hero-floater { display: none; }
+    .steam { display: none; }
+    .hero-floor-shadow { display: none; }
 
     .combos-grid { grid-template-columns: 1fr 1fr; padding: 0 24px; }
     .combo-card.featured { grid-row: span 1; padding-top: 60%; }
@@ -1461,12 +1464,39 @@
     .nav-order { font-size: 13px; padding: 8px 14px; letter-spacing: 1px; }
 
     /* HERO */
-    .hero { min-height: auto; margin-top: 52px; }
-    .hero-left { padding: 40px 20px 48px; }
-    .hero-title { font-size: clamp(56px, 16vw, 80px); }
-    .hero-sub { font-size: 14px; letter-spacing: 2px; }
-    .btn-primary { font-size: 17px; padding: 14px 28px; }
-    .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero {
+      display: block;
+      position: relative;
+      min-height: 0 !important;
+      height: auto;
+      margin-top: 52px;
+    }
+    .hero-left {
+      padding: 24px 44% 24px 20px;
+      justify-content: flex-start;
+      min-height: 0;
+    }
+    .hero-right {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 42%;
+      background: transparent;
+      overflow: hidden;
+      min-height: 0;
+    }
+    .hero-plate { width: 100%; filter: none; }
+    .hero-glow-spill { display: none; }
+    .hero-floater { display: none; }
+    .steam { display: none; }
+    .hero-floor-shadow { display: none; }
+    .hero-stripe { display: none; }
+    .hero-title { font-size: clamp(36px, 10vw, 56px); }
+    .hero-sub { font-size: 12px; letter-spacing: 2px; margin-bottom: 16px; }
+    .btn-primary { font-size: 15px; padding: 12px 22px; }
+    .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 10px; }
 
     /* TICKER */
     .ticker { padding: 8px 0; }
@@ -1499,10 +1529,16 @@
     .menu-item-body { padding: 10px; }
 
     /* LTO */
-    .lto-section { grid-template-columns: 1fr; }
+    .lto-section { grid-template-columns: 1fr; overflow: visible; }
     .lto-left { padding: 40px 20px; }
     .lto-title { font-size: clamp(44px, 12vw, 72px); }
-    .lto-right { min-height: 260px; }
+    .lto-right {
+      min-height: 320px;
+      width: 100%;
+      max-width: 100%;
+    }
+    .lto-right img { object-fit: cover; width: 100%; height: 100%; min-height: 320px; }
+    .lto-right::before { display: none; }
     .lto-price { font-size: 40px; }
     .countdown { gap: 10px; }
     .cd-num { width: 48px; height: 48px; font-size: 32px; }

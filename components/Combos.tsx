@@ -26,8 +26,18 @@ export default function Combos() {
       </div>
 
       <div className="combos-grid">
-        {/* FEATURED */}
         <div className="combo-card featured">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="featured-bg-img"
+            src={`${BASE}/thighstack.png`}
+            alt=""
+            aria-hidden={true}
+            width={960}
+            height={957}
+            loading="lazy"
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 75%', zIndex: 0 }}
+          />
           <span className="combo-num">1</span>
           <span className="combo-tag">⭐ Most Popular</span>
           <div className="featured-info-panel">
@@ -48,7 +58,6 @@ export default function Combos() {
           </div>
         </div>
 
-        {/* HEAT SEEKER */}
         <div className="combo-card">
           <span className="combo-num">2</span>
           <span className="combo-tag">🌶 Spicy</span>
@@ -68,7 +77,6 @@ export default function Combos() {
           </div>
         </div>
 
-        {/* BRUNCH BOSS */}
         <div className="combo-card">
           <span className="combo-num">3</span>
           <span className="combo-tag">👑 Premium</span>
@@ -88,12 +96,12 @@ export default function Combos() {
           </div>
         </div>
 
-        {/* FAMILY PACK */}
         <div className="combo-card">
           <span className="combo-num">4</span>
           <span className="combo-tag">👨‍👩‍👧 Family</span>
           <span className="combo-food-icon" style={{ fontSize: 40, display: 'block', marginBottom: 8 }}>
-            <img src={`${BASE}/chickenbucket.png`} alt="Family Pack" style={{ width: 48, height: 48, objectFit: 'contain', display: 'block' }} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img loading="lazy" src={`${BASE}/chickenbucket.png`} alt="Family Pack" style={{ width: 48, height: 48, objectFit: 'contain', display: 'block' }} />
           </span>
           <div className="combo-name">FAMILY PACK</div>
           <div className="combo-desc">8-piece chicken, 4 waffles, 3 sides, sauce sampler. Feeds the whole crew.</div>
@@ -111,7 +119,6 @@ export default function Combos() {
           </div>
         </div>
 
-        {/* GARDEN STACK */}
         <div className="combo-card">
           <span className="combo-num">5</span>
           <span className="combo-tag">🌿 Plant-Based</span>

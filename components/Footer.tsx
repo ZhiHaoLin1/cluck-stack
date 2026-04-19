@@ -1,14 +1,11 @@
-const BASE = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
+const R2 = 'https://pub-ec2cb0892de943b0b34452bdaf3b4997.r2.dev'
 
 export default function Footer() {
   return (
     <footer>
       <div className="footer-logo">
-        <img
-          src={`${BASE}/logo.png`}
-          alt="Cluck & Stack"
-          style={{ height: 28, width: 'auto', display: 'block', opacity: 0.85 }}
-        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={`${R2}/logo.png`} alt="Cluck & Stack" width={84} height={28} loading="lazy" style={{ height: 28, width: 'auto', display: 'block', opacity: 0.85 }} />
       </div>
       <ul className="footer-links">
         <li><a href="#">Menu</a></li>
